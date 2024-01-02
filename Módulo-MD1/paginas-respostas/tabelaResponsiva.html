@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Tabela Responsiva </title>
+	<!-- lnik do Favicon -->
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+	<style>
+		.table-info {
+			cursor: pointer;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a:active {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h3 class="text-center mt-3 mb-3">Tabela Responsiva - Basileirão 2023</h3>
+		<div class="row">
+			<div class="col-12">
+				<div class="card-body">
+					<table class="table table-hover table-striped table-bordered" id="myTable" width="100%">
+						<thead>
+							<tr class="table-info">
+								<th scope="col" title="Posição">Pos</th>
+								<th scope="col">Clubes</th>
+								<th scope="col">Pontos</th>
+								<th scope="col">Jogos</th>
+								<th scope="col">Vitórias</th>
+								<th scope="col">Empates</th>
+								<th scope="col">Derrotas</th>
+								<th scope="col" title="Gols Marcados">GM</th>
+								<th scope="col" title="Gols Contra">GC</th>
+								<th scope="col" title="Saldo de Gol">SG</th>
+								<th scope="col">Últimas 5</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Palmeiras</td>
+								<td>70</td>
+								<td>38</td>
+								<td>20</td>
+								<td>10</td>
+								<td>8</td>
+								<td>64</td>
+								<td>33</td>
+								<td>31</td>
+								<td>E-V-V-E-V</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Grêmio</td>
+								<td>68</td>
+								<td>38</td>
+								<td>21</td>
+								<td>5</td>
+								<td>12</td>
+								<td>63</td>
+								<td>56</td>
+								<td>7</td>
+								<td>V-V-V-D-D</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Atlético-MG</td>
+								<td>66</td>
+								<td>38</td>
+								<td>19</td>
+								<td>9</td>
+								<td>10</td>
+								<td>52</td>
+								<td>32</td>
+								<td>20</td>
+								<td>D-V-V-V-V</td>
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td>Flamengo</td>
+								<td>66</td>
+								<td>38</td>
+								<td>19</td>
+								<td>9</td>
+								<td>10</td>
+								<td>56</td>
+								<td>42</td>
+								<td>14</td>
+								<td>D-V-D-V-V</td>
+							</tr>
+							<tr>
+								<th scope="row">5</th>
+								<td>Botadfogo</td>
+								<td>64</td>
+								<td>38</td>
+								<td>18</td>
+								<td>10</td>
+								<td>10</td>
+								<td>58</td>
+								<td>37</td>
+								<td>21</td>
+								<td>D-E-E-E-E</td>
+							</tr>
+							<tr>
+								<th scope="row">6</th>
+								<td>Bragantino</td>
+								<td>62</td>
+								<td>38</td>
+								<td>17</td>
+								<td>11</td>
+								<td>10</td>
+								<td>49</td>
+								<td>35</td>
+								<td>14</td>
+								<td>D-V-D-D-D</td>
+							</tr>
+							<tr>
+								<th scope="row">7</th>
+								<td>Fluminense</td>
+								<td>56</td>
+								<td>38</td>
+								<td>16</td>
+								<td>8</td>
+								<td>14</td>
+								<td>51</td>
+								<td>47</td>
+								<td>4</td>
+								<td>D-D-V-V-V</td>
+							</tr>
+							<tr>
+								<th scope="row">8</th>
+								<td>Athletico-PR</td>
+								<td>56</td>
+								<td>38</td>
+								<td>14</td>
+								<td>14</td>
+								<td>10</td>
+								<td>51</td>
+								<td>43</td>
+								<td>8</td>
+								<td>D-V-E-E-E</td>
+							</tr>
+							<tr>
+								<th scope="row">9</th>
+								<td>Internacional</td>
+								<td>55</td>
+								<td>38</td>
+								<td>15</td>
+								<td>10</td>
+								<td>13</td>
+								<td>46</td>
+								<td>45</td>
+								<td>1</td>
+								<td>V-V-V-V-D</td>
+							</tr>
+							<tr>
+								<th scope="row">10</th>
+								<td>Fortaleza</td>
+								<td>54</td>
+								<td>38</td>
+								<td>15</td>
+								<td>9</td>
+								<td>14</td>
+								<td>45</td>
+								<td>44</td>
+								<td>1</td>
+								<td>V-V-V-E-E</td>
+							</tr>
+							<tr>
+								<th scope="row">11</th>
+								<td>São Paulo</td>
+								<td>53</td>
+								<td>38</td>
+								<td>14</td>
+								<td>11</td>
+								<td>13</td>
+								<td>40</td>
+								<td>38</td>
+								<td>2</td>
+								<td>V-D-V-E-D</td>
+							</tr>
+							<tr>
+								<th scope="row">12</th>
+								<td>Cuiabá</td>
+								<td>51</td>
+								<td>38</td>
+								<td>14</td>
+								<td>9</td>
+								<td>15</td>
+								<td>40</td>
+								<td>39</td>
+								<td>1</td>
+								<td>V-D-D-E-V</td>
+							</tr>
+							<tr>
+								<th scope="row">13</th>
+								<td>Corinthians</td>
+								<td>50</td>
+								<td>38</td>
+								<td>12</td>
+								<td>14</td>
+								<td>12</td>
+								<td>47</td>
+								<td>48</td>
+								<td>-1</td>
+								<td>V-D-V-D-V</td>
+							</tr>
+							<tr>
+								<th scope="row">14</th>
+								<td>Cruzeiro</td>
+								<td>47</td>
+								<td>38</td>
+								<td>11</td>
+								<td>14</td>
+								<td>13</td>
+								<td>35</td>
+								<td>32</td>
+								<td>3</td>
+								<td>E-E-E-V-E</td>
+							</tr>
+							<tr>
+								<th scope="row">15</th>
+								<td>Vasco da Gama</td>
+								<td>45</td>
+								<td>38</td>
+								<td>12</td>
+								<td>9</td>
+								<td>17</td>
+								<td>41</td>
+								<td>51</td>
+								<td>-10</td>
+								<td>V-D-D-E-E</td>
+							</tr>
+							<tr>
+								<th scope="row">16</th>
+								<td>Bahia</td>
+								<td>44</td>
+								<td>38</td>
+								<td>12</td>
+								<td>8</td>
+								<td>18</td>
+								<td>50</td>
+								<td>53</td>
+								<td>-3</td>
+								<td>V-D-D-V-E</td>
+							</tr>
+							<tr>
+								<th scope="row">17</th>
+								<td>Santos</td>
+								<td>43</td>
+								<td>38</td>
+								<td>11</td>
+								<td>10</td>
+								<td>17</td>
+								<td>39</td>
+								<td>64</td>
+								<td>-25</td>
+								<td>D-D-D-E-E</td>
+							</tr>
+							<tr>
+								<th scope="row">18</th>
+								<td>Goiás</td>
+								<td>38</td>
+								<td>38</td>
+								<td>9</td>
+								<td>11</td>
+								<td>18</td>
+								<td>36</td>
+								<td>53</td>
+								<td>-17</td>
+								<td>V-D-D-D-D</td>
+							</tr>
+							<tr>
+								<th scope="row">19</th>
+								<td>Coritiba</td>
+								<td>30</td>
+								<td>38</td>
+								<td>8</td>
+								<td>6</td>
+								<td>24</td>
+								<td>41</td>
+								<td>73</td>
+								<td>-32</td>
+								<td>D-D-E-D-V</td>
+							</tr>
+							<tr>
+								<th scope="row">20</th>
+								<td>América-MG</td>
+								<td>24</td>
+								<td>38</td>
+								<td>5</td>
+								<td>9</td>
+								<td>24</td>
+								<td>42</td>
+								<td>81</td>
+								<td>-39</td>
+								<td>D-V-D-D-D</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- Botão de voltar -->
+		<div class="row">
+			<h1 class="text-center mt-3 mb-5">
+				<a class="btn btn-outline-primary" href="../index.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="currentColor" d="m12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81zM12 3L2 12h3v8h6v-6h2v6h6v-8h3z" />
+					</svg>
+					Início
+				</a>
+			</h1>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#myTable').DataTable({
+				responsive: true,
+
+			});
+		});
+	</script>
+
+</body>
+
+</html>

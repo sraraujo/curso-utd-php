@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de Grid</title>
+    <!-- lnik do Favicon -->
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/android-chrome-192x192.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <!-- Link da CDN do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            width: 95%;
+            margin: auto;
+        }
+
+        img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        p {
+            text-align: justify;
+            text-indent: 20px;
+            padding: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: red;
+        }
+
+        @media screen and (max-width: 990px) {
+            img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto">
+        <h4 class="text-center mt-5">
+            Layout de Grid
+        </h4>
+        <div class="row mt-5">
+            <!-- 1º Div | Imagens das Pirâmides do Egito -->
+            <div class="card-fluid col-4">
+                <div id="carouselExampleAutoplaying-1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/330px-All_Gizah_Pyramids.jpg"
+                                class="d-block w-100" alt="Pirãmides do Egito">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://www.descobriregipto.com/wp-content/uploads/2019/04/Surgimento-dos-Templos-no-Antigo-Egito.png"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://www.pacotesparaegito.com/images/blogs/1661078226blogitems.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://images.memphistours.com/large/42f4edc533c9ed00b364628c3f20c0ea.jpg"
+                                class="d-block w-100" alt="Templo de Abu Simbel ">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="https://istoe.com.br/wp-content/uploads/2021/12/72.jpg" class="d-block w-100"
+                                alt="O caminho dos faraós ">
+                        </div>
+                    </div>
+
+                    <h5 class="text-center mt-2">
+                        <a href="https://maps.app.goo.gl/ifRS1SCXCTXx8mtm9" target="_blank">
+                            <span class="iconify" data-icon="lets-icons:pointers-fill"></span>
+                            Egito
+                            <span class="iconify" data-icon="lets-icons:pointers-fill"></span>
+                        </a>
+                    </h5>
+
+                    <p>
+                        <strong>Pirâmides do Egito</strong> são antigas estruturas feitas em alvenaria construídas pela
+                        civilização do Antigo Egito. Até novembro de 2008, existiam fontes citando entre 118 e 138
+                        pirâmides egípcias identificadas.
+                    </p>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying-1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying-1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 2º Div | Imagens do Coliseu de Roma -->
+            <div class="card-fluid col-4">
+                <div id="carouselExampleAutoplaying-2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="4000">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcq8sXbibcHpsBndNQu9Ls5KeBp-lF50UBJfmVhiQqTqGMsMOuF8xVSfBlXfegvtHz4a4&usqp=CAU"
+                                class="d-block w-100" alt="Coliseu de Roma">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3500">
+                            <img src="https://static.todamateria.com.br/upload/in/te/interiordocoliseu-cke.jpg?auto_optimize=low"
+                                class="d-block w-100" alt="Coliseu de Roma">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3500">
+                            <img src="https://ensinarhistoria.com.br/s21/wp-content/uploads/2015/10/Coliseu-foto-aerea.jpg"
+                                class="d-block w-100" alt="Coliseu visto de cima">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3500">
+                            <img src="https://italiana.blog.br/wp-content/uploads/2019/06/capa-5.jpg"
+                                class="d-block w-100" alt="Coliseu de Roma">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3500">
+                            <img src="https://www.ticketsrome.com/images/immagini_pagine/Coliseu_Roma_bilhetes.jpg"
+                                class="d-block w-100" alt="Coliseu de Roma">
+                        </div>
+                    </div>
+
+                    <h5 class="text-center mt-2">
+                        <a href="https://maps.app.goo.gl/xsJ8uf8T4ujLK7x68" target="_blank">
+                            <span class="iconify" data-icon="lets-icons:pointers-fill"></span>
+                            Coliseu
+                            <span class="iconify" data-icon="lets-icons:pointers-fill"></span>
+                        </a>
+                    </h5>
+
+                    <p>
+                        <strong>Coliseu de Roma</strong>, também conhecido como Anfiteatro Flaviano, é um anfiteatro
+                        oval localizado no centro da cidade de Roma, capital da Itália.
+                    </p>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying-2"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying-2"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 3º Div | Imagens de Holambra -->
+            <div class="card-fluid col-4">
+                <div id="carouselExampleAutoplaying-3" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="4000">
+                            <img src="https://static.wixstatic.com/media/06db6a_3bc85afdfc9346969ee6ef327ff4d7ef~mv2.jpg/v1/fill/w_520,h_405,al_c,q_80/HOLAMBRA-1.jpg"
+                                class="d-block w-100" alt="Foto de Holambra-SP">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="https://www.segueviagem.com.br/wp-content/uploads/2020/09/shutterstock_1188050263-scaled.jpg"
+                                class="d-block w-100" alt="Foto de Holambra-SP">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="https://vamosporai.com/wp-content/uploads/2023/05/rua-dos-guarda-chuvas-em-Holambra.jpg"
+                                class="d-block w-100" alt="Foto de Holambra-SP">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="https://media.licdn.com/dms/image/D4D12AQG6A5GzbJfP1g/article-cover_image-shrink_720_1280/0/1695643384851?e=2147483647&v=beta&t=rNPz0gaJSGniYG2Plp5mO6e8yzapbC6EDorqqPbG2sg"
+                                class="d-block w-100" alt="Foto de Holambra-SP">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="https://2.bp.blogspot.com/-FAGAHSypTDw/WwQ_l_g-ZtI/AAAAAAABGoQ/ioTev3jGhy8wrSN4ZRBlZQJmBl0ysmYfgCLcBGAs/s1600/imagem_release_1293551.jpg"
+                                class="d-block w-100" alt="Foto de Holambra-SP">
+                        </div>
+                    </div>
+
+                    <h5 class="text-center mt-2">
+
+                        <a href="https://maps.app.goo.gl/VY7ZdMxXghtY8ESo9" target="_blank">
+                            <span class="iconify" data-icon="lets-icons:pointers-fill"></span>
+                            Holambra
+                            <span class="iconify" data-icon="lets-icons:pointers-fill"></span>
+                        </a>
+                    </h5>
+
+                    <p>
+                        <strong>Holambra</strong> é um município brasileiro do estado de São Paulo e microrregião de
+                        Campinas, fundada em 14 de julho de 1948. Seu nome, junção de Holanda, América e Brasil, se dá
+                        em virtude da colônia neerlandesa que se firmou na antiga fazenda Ribeirão.
+                    </p>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying-3"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying-3"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Botão de voltar -->
+            <div class="row">
+                <h1 class="text-center mt-3 mb-5">
+                    <a class="btn btn-outline-primary" href="../index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="m12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81zM12 3L2 12h3v8h6v-6h2v6h6v-8h3z" />
+                        </svg>
+                        Início
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link so JS do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- Link do iconiFy -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+</body>
+
+</html>
