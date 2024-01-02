@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+body {
+    width: 95%;
+    margin: auto;
+}
+
+img {
+    height: 250px;
+    object-fit: cover;
+}
+
+p {
+    text-align: justify;
+    text-indent: 20px;
+    padding: 0 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+}
+
+@media screen and (max-width: 768px) {
+    .card-fluid{
+        width: 70vw;
+        margin: auto auto 30px auto;
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    img {
+        height: 150px;
+    }
+}
