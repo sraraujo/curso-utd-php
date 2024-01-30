@@ -31,7 +31,6 @@ if (isset($_SESSION[md5("user_name")])) {
 
 <body>
 
-    <!------ Include the above in your HEAD tag ---------->
     <div class="wrapper fadeInDown" style="background-color: #233242;">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -39,38 +38,48 @@ if (isset($_SESSION[md5("user_name")])) {
             <!-- Icon -->
             <div class="fadeIn first">
                 <img src="imagens/00.png" id="icon" alt="User Icon" class="my-3"/>
-                <h3 class="mb-5">Controle de Estoque</h3>
+                <h3 class="mb-5">Sistema de Estoque</h3>
+                <!-- <h3 class="mb-5">Controle de Estoque</h3> -->
             </div>
 
             <!-- Login Form -->
-            <form action="pages/validator.php" method="POST">
+            <form action="pages/validator.php" method="post">
 
                 <input type="text" id="login" class="fadeIn second" name="email" placeholder="E-mail" required>
                 <input type="password" id="password" class="fadeIn third my-3" name="senha" placeholder="Senha" required>
 
+                <input type="hidden" name="action" value="logar">
                 <!-- Botão Entrar -->
-                <input type="submit" class="btn btn-success" value="Entrar" width="100%">
+                <input type="submit" class="btn btn-primary" value="Entrar" width="100%">
             </form>
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover btn" href="#">Cadastre-se</a>
+                <a class="underlineHover btn" href="pages/addAdim.php">Cadastre-se</a>
             </div>
 
         </div>
     </div>
 
-    <?php if (isset($_GET["error"])) : ?>
-        <?php switch ($_GET["error"]) {
+    <?php if (isset($_GET["msg"])) : ?>
+        <?php switch ($_GET["msg"]) {
 
             case 'login_erro':
                 echo "<script> alert('ERRO: Login ou senha inválida!') </script>";
                 break;
 
+            case "user-null":
+                echo "<script> alert('ERRO: Usuário não cadastrado!') </script>";
+                break;
+            
+            case "registered user":
+                echo "<script> alert('Usuário Cadastrado com Sucesso!') </script>";
+                break;
+
             case 'forbidden':
                 echo "<script> alert('Acesso negado!') </script>";
                 break;
-        }
+            }
         ?>
 
     <?php endif; ?>
