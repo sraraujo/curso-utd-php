@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: #0018F0;
+}
+
+a:hover{
+    color: #020b60;
+    background-color: yellow;
+    text-decoration: underline;
+}

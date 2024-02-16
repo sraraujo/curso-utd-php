@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body{
+    background-color: #233242;
+}
+
+span{
+    text-decoration: underline;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+p{
+    font-size: 18px;
+}
+
+.nomeApp{
+    font-weight: bold;
+}
+
+.vermelho{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+}
