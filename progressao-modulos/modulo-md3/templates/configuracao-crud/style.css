@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
-a{
+a.visualizar{
     text-decoration: none;
 }
 
-a:visited{
+a.visualizar:visited{
     color: #0018F0;
 }
 
-a:hover{
+a.visualizar:hover{
     color: #020b60;
     background-color: yellow;
     text-decoration: underline;

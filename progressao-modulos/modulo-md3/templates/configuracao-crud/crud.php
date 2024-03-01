@@ -2,6 +2,19 @@
 
     function inserir($tabela, $dados){
 
+        // lembrar de apagar - teste / retirar a imagem
+        if (empty($dados["imagemLink"])){
+            unset($dados["imagemLink"]);
+        }
+
+        if (isset($dados["codigo"])){
+            // trecho para remover aspa simples do nome, pois não cadastra nomes, como: farinha d'água / M&M's
+            $dados["nome"] = str_replace("'", "", $dados["nome"]);
+        
+            $dados["nome"] = ucwords($dados["nome"]);
+            $dados["codigo"] = mb_strtoupper($dados["codigo"]);
+        }
+
         // 1º parte da query
         $query = "INSERT INTO `$tabela` ";
 
@@ -81,11 +94,17 @@
         $query = "UPDATE `$tabela` SET ";
 
         foreach ($dados as $key => $value){
-            $query .= "`$key` = '$value', ";
+            if($value != "CURRENT_TIMESTAMP"){
+                $query .= "`$key` = '$value' AND ";
+
+            }else{
+                $value = str_replace("'", "", $value);
+                $query .= "`$key` = ".$value." AND ";
+            }
         }
 
         // removendo a última vírgula
-        $query = substr($query, 0, -2 );
+        $query = substr($query, 0, -4 );
 
         $query .= " WHERE ";
 

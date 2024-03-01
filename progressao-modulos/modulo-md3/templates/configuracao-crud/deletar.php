@@ -3,6 +3,14 @@
     require_once "conexao.php";
     include_once "crud.php";
 
+    session_start();
+
+    if (!isset($SESSO["user"])){
+        header("location: ../../pages/login.php");
+    }
+
+    $user = $_SESSION["user"];
+
     if(isset($_GET["id"])){
         
         $filtro['id'] = $_GET['id'];    
@@ -13,7 +21,7 @@
             $dados["ativo"] = ($_GET["status"] == 1) ? '0' : '1';
             $situacao = ($dados["ativo"] == 0) ? "INATIVO" : "ATIVO";
 
-            inserir("log", ["tipo" => "Alteração de Status", "conteudo" => "Produto com código: ".($_GET["codigo"]).", foi marcado como $situacao, pelo usuario XXXX."]);
+            inserir("log", ["tipo" => "Alteração de Status", "conteudo" => "Produto com código: ".($_GET["codigo"]).", foi marcado como $situacao, pelo usuario: ".$user['apelido']."."]);
         
         // codigo que exclui / restaura 
         } else {
@@ -24,7 +32,7 @@
                 $situacao = "EXCLUIDO";
                 $frase = 'delete-ok';
 
-                inserir("log", ["tipo" => "Alteração de Status", "conteudo" => "Produto com código: ".($_GET["codigo"]).", foi marcado como $situacao, pelo usuario XXXX."]);
+                inserir("log", ["tipo" => "Alteração de Status", "conteudo" => "Produto com código: ".($_GET["codigo"]).", foi marcado como $situacao, pelo usuario: ".$user['apelido']."."]);
 
             
             // trecho que vai marcar o isDeleted = '' // restaura
@@ -33,7 +41,7 @@
                 $situacao = "RESTAURADO";
                 $frase = 'restauration-ok';
 
-                inserir("log", ["tipo" => "Alteração de Status", "conteudo" => "Produto com código: ".($_GET["codigo"]).", foi marcado como $situacao, pelo usuario XXXX."]);
+                inserir("log", ["tipo" => "Alteração de Status", "conteudo" => "Produto com código: ".($_GET["codigo"]).", foi marcado como $situacao, pelo usuario: ".$user['apelido']."."]);
                 
             // caso haja algum erro
             } else {
@@ -44,10 +52,10 @@
         $resultado = atualizar("produtos", $dados, $filtro);
         
         if ($resultado){
-            header("location: lista.php?msg=$frase");
+            header("location: ../listProduct.php?msg=$frase");
         
         }else {
-            header("location: lista.php?msg=$frase");
+            header("location: ../listProduct.php?msg=$frase");
         }
 
     }else {

@@ -5,6 +5,12 @@
     
     include_once "crud.php";
 
+    session_start();
+
+    if (!isset($_SESSION["user"])){
+        header("location: ../../pages/login.php?msg=forbidden");
+    }
+
     $data = selecionar("usuarios", null, null, null);
 
     $titulos = array_keys($data[0]);
@@ -37,9 +43,6 @@
                     <?php foreach ($titulos as $titulo): ?>
                         <td> <?= $linha[$titulo]; ?> </td>
                     <?php endforeach; ?>
-
-                    <td> <?= $linha["id"] ?> </td>
-                                        
                     <td>
                         <a href="deletar.php?id=<?=$linha['id']?>">Excluir</a>
                     </td>

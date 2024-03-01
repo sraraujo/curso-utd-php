@@ -1,58 +1,65 @@
 <?php 
 
-    require_once "../modules/conexao.php";
-    include_once "../modules/crud.php";
+    require_once "../../configuracao-crud/conexao.php";
+    include_once "../../configuracao-crud/crud.php";
 
     date_default_timezone_set("America/Fortaleza");
 
     if (isset($_POST["action"]) ){
 
         if ($_POST["action"] == "logar"){
+
+            unset($_POST["action"]);
                        
-            $username["email"] = $_POST["email"];
-            $username["senha"] = sha1($_POST["senha"]);
+            $filtros["email"] = $_POST["email"];
  
-            // abrir o arquivo para verificar  os dados do usuário
-            // $handle = fopen("database.usuarios.txt", "a+");
-            $handle = file("database.usuarios.txt");
+            // fazendo a pesquisa do email no BD, se houver registro todos os dados são carregados na variável
+            $validar = selecionar("usuarios", null, $filtros, null);
 
-            foreach ($handle as $key => $data){
-                // nome = $data[0] - email = $data[1] - senha = $data[2] - login: $data[3]
+            $filtros["senha"] = sha1($_POST["senha"]);
+            $data = array();
 
-                // $data é uma linha/string sendo transformada em array
-                $data = explode(" - ", $data);
+            // caso haja registro, a variável retorna com true e os dados do usuario com aquele emial
+            if ($validar){
 
-                if ($username["email"] == $data[1] && $username["senha"] == $data[2]){
-
-                    unset($username);
-
-                    $username["nome"] = $data[0];
-                    $username["email"] = $data[1];
-                    $username["senha"] = $data[2];
-                    $username["login"] = date("d/m/Y H:i:s");
+                // verifica se email e senha estão corretos para validar o login
+                if ($validar[0]["email"] == $filtros["email"] && $validar[0]["senha"] == $filtros["senha"] ){
                     
-                    // abrindo e inserindo os dados em uam session
+                    // recebendo o ID para validar no UPDATE
+                    $id["id"] = $validar[0]["id"];
+
+                    // trecho que vai atualizar o datetime da sessão atual
+                    $atualizar["loginAtual"] = "CURRENT_TIMESTAMP";
+                    atualizar("usuarios", $atualizar, $id);
+
+                    // atualizando os dados novamente
+                    $validar = selecionar("usuarios", null, $filtros, null);
+                    
+                    foreach ($validar[0] as $key => $value ){
+                        $data["$key"] = $value;
+                    }
+
+                    if (explode(" ", $data["nome"]) > 2){
+                        $nome = explode(" ", $data["nome"]);
+                        $sobrenome = count($nome) - 1;
+                        $data["apelido"] = "$nome[0] $nome[$sobrenome]";
+                    
+                    } else {
+                        $data["apelido"] = $data["nome"];
+                    }     
+
                     session_start();
-                    $_SESSION[md5("user_name")] = $username;
-
-                    // atualizando os dados e inserindo o novo login
-                    $handle[$key] = implode(" - ", $username).PHP_EOL;
+                    $_SESSION["user"] = $data;
+                    header("location: login.php");
                     
-                    // abrindo o arqivo e zerando para receber os novos dados
-                    $updateArquivo = fopen("database.usuarios.txt", "w+");
-
-                    // escrevendo os novos dados n o arquivo
-                    fwrite($updateArquivo, implode("", $handle));
-
-                    // fechando o arquivo tx
-                    fclose($updateArquivo);
-
-                    header("location: page-adim.php");
+                }else{
+                    header("location: login.php?msg=login_erro");
                 }
 
-                header("location: ../index.php?msg=user-null");
+            }else{
+                header("location: login.php?msg=user-null");
             }
-    
+ 
         // condição para cadastrar usuários
         } elseif ($_POST["action"] == "cadastro"){
 
@@ -86,12 +93,12 @@
                 
         
                 $resultado = inserir("usuarios", $_POST);
-        
+
                 if ($resultado){
                     
                     inserir("log", ["tipo" => "Inserção de Registro", "conteudo" => "O usuário ".$_POST['nome']." foi cadastrado."]);
 
-                    header("location: ../index.php?msg=registered-user");
+                    header("location: login.php?msg=registered-user");
 
                 } else {
                     echo "[ ERRO ] - Não foi possível inserir!";

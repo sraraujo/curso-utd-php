@@ -2,14 +2,14 @@
 
     // parte do codigo que recebe os dados do BD: nome do BD, nome d oprojeto 
     // em caso de erro, ela não roda o restante do script, mas o RIQUERE pode ser trocado pelo INCLUDE_ONCE
-    require_once "../modules/conexao.php";
+    require_once "../../configuracao-crud/conexao.php";
 
-    include_once "../modules/crud.php";
+    include_once "../../configuracao-crud/crud.php";
 
     session_start();
 
-    if (isset($_SESSION[md5("user_name")])) {
-        header("location: page-adim.php");
+    if (isset($_SESSION[md5("user")])) {
+        header("location: ../templates/index.php");
     }
 
     if (isset($_GET["user_data"])) {
@@ -35,16 +35,16 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="../favicon/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../favicon/android-chrome-192x192.png" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/favicon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/favicon//android-chrome-192x192.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon//favicon-16x16.png">
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/addAdim.css">
+    <link rel="stylesheet" href="../../css/addAdim.css">
 
 </head>
 
@@ -70,11 +70,11 @@
                                 </span>
                             </div> -->
 
-                            <p>
-                            <a href="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1.8rem" height="2.8rem" viewBox="0 0 24 24"><path fill="#0b5ed7" d="M2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12m16-1h-8l3.5-3.5l-1.42-1.42L6.16 12l5.92 5.92l1.42-1.42L10 13h8z"/></svg>
-                            </a>
-                            </p>
+                            <span title="Voltar">
+                                <a href="login.php">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.8rem" height="2.8rem" viewBox="0 0 24 24"><path fill="#0b5ed7" d="M2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12m16-1h-8l3.5-3.5l-1.42-1.42L6.16 12l5.92 5.92l1.42-1.42L10 13h8z"/></svg>
+                                </a>
+                            </span>
 
                             <h4 class="mb-5 text-center"> 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="2.2rem" viewBox="0 0 640 512"><path fill="#0b5ed7" d="M192 256c61.9 0 112-50.1 112-112S253.9 32 192 32S80 82.1 80 144s50.1 112 112 112m76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C51.6 288 0 339.6 0 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2M480 256c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96s43 96 96 96m48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4c24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592c26.5 0 48-21.5 48-48c0-61.9-50.1-112-112-112"/></svg>Cadastrar Usuário
@@ -130,7 +130,7 @@
 
 
                             <div class="col-12 text-center mx-auto">
-                                <a href="../index.php" class="btn btn-primary mr-5" class="voltar" style="font-size: 16px;">Voltar</a>
+                                <button type="reset" class="btn btn-secondary mr-5">Limpar</button>
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>
                             </div>
                         </form>
@@ -140,11 +140,10 @@
                 
             </div>
         </div>
-
     </main>
 
     <!-- Js do formulário -->
-    <script src="components/js-formulario.js"></script>
+    <script src="scripts/js-formulario.js"></script>
 
 </body>
 

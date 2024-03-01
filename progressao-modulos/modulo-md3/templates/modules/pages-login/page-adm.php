@@ -2,11 +2,11 @@
 
     session_start();
 
-    if (!isset($_SESSION[md5("user_name")])){
-        header("location: ../index.php?error=forbidden");
+    if (!isset($_SESSION["user"])){
+        header("location: login.php?error=forbidden");
     }
 
-    $user_data = $_SESSION[md5("user_name")];
+    $user_data = $_SESSION["user"];
 
 ?>
 
@@ -34,7 +34,7 @@
         <div class="row col-lg-6 mt-5 mx-auto">
             <div class="card">
                 <div class="card-header text-center">
-                    <img src="../imagens/00.png" alt="Logo do sistema de estoque" width="60px">
+                    <img src="../../assets/img/00.png" alt="Logo do sistema de estoque" width="60px">
                     <span class="nomeApp">Sistema Stock-<a class="vermelho">X</a></span>
                 </div>
                 
@@ -54,7 +54,7 @@
                             </p>
                             <p>
                                 <strong>Último Login:</strong>
-                                <?= $user_data["login"]?>
+                                <?= $user_data["loginFim"]?>
                             </p>
                         </div>
                     </div>
@@ -69,9 +69,6 @@
 
         </div>
     </div>
-
-
-
 
     <!-- Js do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
