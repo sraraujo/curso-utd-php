@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 25px;
+    background-color: #233242;
+}
+
+input:focus {
+    outline: none;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 50px !important;
+    background: whitesmoke;
+    border-radius: 5px;
+    position: relative;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+form div {
+    float: left;
+    margin-bottom: 30px;
+}
+
+form>div>input {
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 5px;
+    border: 0;
+    background: whitesmoke;
+    border-bottom: 1px solid silver;
+    width: 100%;
+    color: gray;
+}
+
+form>p:last-of-type {
+    text-align: center;
+    padding-top: 50px;
+    display: table;
+    width: 100%;
+    color: white;
+}
+
+form>p:last-of-type>a {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 25px;
+    background: silver;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.term {
+    padding-top: 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.term>i {
+    cursor: pointer;
+    width: 20px;
+}
+
+.term>span {
+    font-size: 12px;
+}
+
+/* delete */
+form>a:last-of-type {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.text-destaque{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Configurações JAP  */
+
+h4{
+    font-weight: bolder;
+}
+
+span.nomeApp{
+
+    text-decoration: underline;
+}
+
+.vermelho{
+    
+    color: red;
+}
