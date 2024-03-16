@@ -81,11 +81,11 @@
                             </div>
                             
                             <div class="text-center">
-                                <button class="btn btn-success mt-3 text-center mr-4"><a class="acao" href='{{ url("/produtos/lista") }}'>Home</a> </button>
+                                <button class="btn btn-success mt-3 text-center mr-4"><a class="acao" href='{{ url("/funcionarios/lista") }}'>Home</a> </button>
 
                                 <?php if ( $_GET): ?>
                                     <button class="btn btn-secondary mt-3 text-center mr-4">
-                                        <a class="acao" href='{{ url("/produtos/visualizar/$produto->id") }}'>Visualizar</a>
+                                        <a class="acao" href='{{ url("/funcionarios/visualizar/$funcionario->id") }}'>Visualizar</a>
                                     </button>
                                 <?php endif; ?>
                                 

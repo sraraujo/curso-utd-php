@@ -28,23 +28,33 @@
 
                     <div class="card-body">
                         
-                        <div class="">
+                        <div class="row">
+
                             {{-- Editar --}}
-                            <button title="Editar" class="btn btn-warning hover mx-2">
-                                <a class="acao" href='{{ url("/produtos/editar/$produto->id?r=0") }}'>
-                                    <span class="iconify" data-icon="typcn:pencil" style="color: white;"></span>
-                                </a>
-                            </button>
+                            
+                            <div>
+                                <button title="Editar" class="btn btn-warning hover mx-2">
+                                    <a class="acao" href='{{ url("/produtos/editar/$produto->id?r=0") }}'>
+                                        <span class="iconify" data-icon="typcn:pencil" style="color: white;"></span>
+                                    </a>
+                                </button>
+                            </div>
                             
                             {{-- Excluir --}}
-                            <!-- Button trigger modal -->
-                            <button title="Excluir" type="button" class="btn btn-danger hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <span class="iconify acao" data-icon="bxs:trash" style="color: white;"></span>
-                            </button>
+                            <form action=" {{ url('produtos/lista', ['id' => $produto->id]) }}" method="POST">
+                                @csrf
+                                <button title="Excluir" type="submit" class="btn btn-danger hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <span class="iconify acao" data-icon="bxs:trash" style="color: white;"></span>
+                                </button>
+                            </form>
+                        
                         </div>
                         
                         <table class="table table-bordered table-hover table-striped mt-3">
                             <tbody>
+                                <tr>
+                                    <th>Id</th><td> {{ $produto->id }} </td>
+                                </tr>
                                 <tr>
                                     <th>Nome</th><td> {{ $produto->nome }} </td>
                                 </tr>

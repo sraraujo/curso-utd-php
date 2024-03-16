@@ -32,7 +32,7 @@ Route::post('/produtos/novo', [App\Http\Controllers\ProdutosController::class, '
 Route::get('/produtos/visualizar/{id}', [App\Http\Controllers\ProdutosController::class, 'show']); 
 Route::get('/produtos/editar/{id}', [App\Http\Controllers\ProdutosController::class, 'edit']); 
 Route::post('/produtos/editar/{id}', [App\Http\Controllers\ProdutosController::class, 'update'])->name("editar_produto"); 
-Route::get("/produtos/lista/{id}", "App\Http\Controllers\ProdutosController@delete");
+Route::post("/produtos/lista/{id}", "App\Http\Controllers\ProdutosController@delete")->name("produtosLista");
 
 // produtos
 // Route::get('/produtos/lista', [App\Http\Controllers\ProdutosController::class, 'lista'])->name('produtoslista'); 
@@ -46,4 +46,4 @@ Route::post('/funcionarios/novo', [App\Http\Controllers\FuncionariosController::
 Route::get('/funcionarios/visualizar/{id}', [App\Http\Controllers\FuncionariosController::class, 'show']); 
 Route::get('/funcionarios/editar/{id}', [App\Http\Controllers\FuncionariosController::class, 'edit']); 
 Route::post('/funcionarios/editar/{id}', [App\Http\Controllers\FuncionariosController::class, 'update'])->name("editar_funcionario"); 
-Route::get("/funcionarios/lista/{id}", [App\Http\Controllers\FuncionariosController::class, 'delete']);
+Route::post("/funcionarios/lista/{id}", [App\Http\Controllers\FuncionariosController::class, 'delete'])->name('funcionariosLista');

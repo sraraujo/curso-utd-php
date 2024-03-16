@@ -6,10 +6,10 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Lista de Funcionarios')
+@section('title', 'Lista de Funcionários')
 
 @section('content_header')
-    <h1>Lista de Funcionarios</h1>
+    <h1>Lista de Funcionários</h1>
 @stop
 
 @section('content')
@@ -85,7 +85,7 @@
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
                                                     
-                                                    <form action=" {{ url('funcioanrios/lista', ['id' => $funcionario->id]) }}" method="GET">
+                                                    <form action=" {{ route('funcionariosLista', ['id' => $funcionario->id]) }}" method="POST">
                                                         @csrf
                                                         <button type="submit" class="btn btn-danger text-white">Sim, Excluir!</button>
                                                     </form>

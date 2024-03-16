@@ -27,7 +27,7 @@
                 'ativo' => $request->ativo,
             ]);
 
-            return redirect("produtos/lista");
+            return redirect("produtos/novo");
         }
 
         public function show($id)
@@ -56,7 +56,7 @@
                 // "isDeleted" => $request->isDeleted,
             ]);
 
-            return redirect("produtos/lista");
+            return redirect("produtos/visualizar/{$id}");
             
         }
 

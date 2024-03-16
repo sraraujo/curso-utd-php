@@ -28,7 +28,7 @@
                 'ativo' => $request->ativo,
             ]);
 
-            return redirect("funcionarios/lista");
+            return redirect("funcionarios/novo ");
         }
 
         public function show($id)
@@ -49,7 +49,7 @@
             $funcionario = Funcionario::findOrfail($id);
 
             $funcionario->update([
-                'nome' => $request->nome,
+                'nome' => ucwords($request->nome),
                 'cargo' => $request->cargo,
                 'pagamento' => $request->pagamento,
                 'admissao' => $request->admissao,
@@ -58,7 +58,8 @@
                 // "isDeleted" => $request->isDeleted,
             ]);
 
-            return redirect("funcionarios/lista");
+            return redirect("funcionarios/visualizar/{$id}");
+            // return redirect("funcionarios/lista");
             
         }
 

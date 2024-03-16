@@ -23,6 +23,28 @@
                     </div>
 
                     <div class="card-body">
+
+                        <div class="row">
+                            {{-- Editar --}}
+                            <div>
+                                <button title="Editar" class="btn btn-warning hover mx-2">
+                                    <a class="acao" href='{{ url("/funcionarios/editar/$funcionario->id?r=0") }}'>
+                                        <span class="iconify" data-icon="typcn:pencil" style="color: white;"></span>
+                                    </a>
+                                </button>
+                            </div>
+                            
+                            {{-- Excluir --}}
+                            <!-- Button trigger modal -->
+                            <form action="{{ route('funcionariosLista', ['id' => $funcionario->id]) }}" method="POST">
+                                @csrf
+                                <button title="Excluir" type="submit" class="btn btn-danger hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <span class="iconify acao" data-icon="bxs:trash" style="color: white;"></span>
+                                    </a>
+                                </button>
+                            </form>
+                        </div>
+
                         <table class="table table-bordered table-hover table-striped mt-3">
                             <tbody>
                                 <tr>
@@ -64,6 +86,12 @@
 @section('css')
     {{-- Add here extra stylesheets --}}
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
 @stop
 
 @section('js')

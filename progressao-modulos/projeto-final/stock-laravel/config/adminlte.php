@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Stock</b>Power',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -257,7 +257,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/produtos/lista',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -296,9 +296,9 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
+            // 'type' => 'navbar-search',
+            // 'text' => 'search',
+            // 'topnav_right' => true,
         ],
         [
             'type' => 'fullscreen-widget',
@@ -308,84 +308,51 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Pesquisar',
         ],
         [
             'text' => 'blog',
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
+
+        // [
+        //     'text' => 'pages',
+        //     'url' => '#',
+        //     'icon' => 'far fa-fw fa-file',
+        //     'label' => 3,
+        //     'label_color' => 'success',
+        // ],
+
+        ['header' => 'PRODUTOS'],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
+            'text' => 'Novo Produto',
+            'url' => 'produtos/novo',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
+            'text' => 'Ver Produtos',
+            'url' => 'produtos/lista',
             'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
         ],
-        ['header' => 'labels'],
+        
+        ['header' => ' FUNCIONÁRIOS '],
+
+        // [
+        //     'text' => 'important',
+        //     'icon_color' => 'red',
+        //     'url' => '#',
+        // ],
+
         [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
+            'text' => 'Novo Funcionário',
             'icon_color' => 'yellow',
-            'url' => '#',
+            'url' => '/funcionarios/novo',
         ],
         [
-            'text' => 'information',
+            'text' => 'Ver Funcionário',
             'icon_color' => 'cyan',
-            'url' => '#',
+            'url' => '/funcionarios/lista',
         ],
     ],
 
