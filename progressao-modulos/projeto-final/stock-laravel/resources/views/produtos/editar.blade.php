@@ -85,7 +85,7 @@
 
                                 <?php if ( $_GET): ?>
                                     <button class="btn btn-secondary mt-3 text-center mr-4">
-                                        <a class="acao" href='{{ url("/funcionarios/visualizar/$funcionario->id") }}'>Visualizar</a>
+                                        <a class="acao" href='{{ url("/produtos/visualizar/$produto->id") }}'>Visualizar</a>
                                     </button>
                                 <?php endif; ?>
                                 
